@@ -1,1 +1,301 @@
+{
+  "task": "Open Source / COTS / GOTS Software Cybersecurity Baseline Research Report",
+  "input": {
+    "software_name": "< ffmpeg >",
+    "requested_version": "<v7.0.2>",
+    "software_type": "OSS",
+    "primary_repository_or_homepage_url": null
+  },
+  "constraints": {
+    "no_assumptions": true,
+    "describe_unknowns": true,
+    "limit_scope_to_named_software": true,
+    "explain_relevance_of_other_software": true,
+    "output_must_be_narrative_report": true,
+    "Top 10 Human Contributors in a list format for the reader to evaluate and referene": true,
+    "output_must_be_in_markdown": true,
+    "output must_have the answers to the questions listed below. If there is no answer explain the reason": true,
+    "If tables for a response have more than 5 columns divide its content and put the rest of the table contents below it. Maintain flow of the data and main idea if there is going to be multiple tables of data under the same response.": true,
+    "output_must_not_be_json": true
+  },
+  "methodology": {
+    "general": [
+      "Base all findings on verifiable sources such as official repositories, vendor documentation, government advisories, and CVE databases.",
+      "If information cannot be confirmed, mark the relevant field as \"unknown\" or \"not found\" and add a clarifying question in the open_questions section.",
+      "Keep the focus on <SOFTWARE_NAME>. When referencing other software (e.g., dependencies, forks, vendor products), explicitly explain why they matter for the security posture of <SOFTWARE_NAME>.",
+      "Use the output_format section as a conceptual outline only; produce a human-readable narrative report (e.g., with headings and paragraphs suitable for documentation) and do not output JSON or code."
+    ],
+    "oss": [
+      "If <SOFTWARE_NAME> is open source, identify the primary code hosting platform (e.g., GitHub, GitLab, Bitbucket). Prefer the canonical repository when multiple mirrors exist.",
+      "From the primary repository, collect stars, forks, contributor statistics, issues, releases, and other relevant activity metrics.",
+      "Identify the top 10 human contributors by commit count on the default branch, excluding obvious bots and automated accounts. For each contributor, record their country when available in their public profile.",
+      "Analyze forks qualitatively: highlight any large or security-focused forks that may influence the security posture or maintenance model of <SOFTWARE_NAME>."
+    ],
+    "cots": [
+      "If <SOFTWARE_NAME> is also distributed as COTS, identify the vendor, product family, and relevant supported versions.",
+      "Use authoritative vulnerability databases (e.g., NVD) and vendor advisories to list applicable CVEs for the requested version and its key bundled dependencies."
+    ],
+    "gots": [
+      "If <SOFTWARE_NAME> is GOTS or part of a GOTS portfolio, determine maintenance responsibility, support level, and update cadence from official documentation or customer portals.",
+      "Clearly state if public information is limited and additional internal sources are required."
+    ]
+  },
+  "output_instructions": {
+    "intended_use": "The output is a written report to be pasted directly into internal cybersecurity documentation or review packages.",
+    "format": "narrative_markdown",
+    "audience": [
+      "cybersecurity_engineers",
+      "security_architects",
+      "risk_management",
+      "IT_management"
+    ],
+    "structure_guidance": [
+      "Organize the report into clearly labeled sections that mirror the major blocks in output_format (Software Identity, OSS, COTS, GOTS, Overall Assessment, Open Questions).",
+      "Use headings, subheadings, paragraphs, and tables where helpful to present the data clearly.",
+      "Summarize technical details for experts while also including short management-ready summaries in plain language.",
+      "Do NOT output the JSON structure itself; only output the human-readable report."
+    ]
+  },
+  "output_format": {
+    "software_identity": {
+      "normalized_name": "",
+      "requested_version": "",
+      "software_type": "",
+      "primary_function": "",
+      "primary_repository_or_homepage_url": "",
+      "key_dependencies_summary": [
+        {
+          "dependency_name": "",
+          "dependency_type": "",
+          "relevance_to_software": "",
+          "evidence_sources": []
+        }
+      ],
+      "evidence_sources": []
+    },
+    "oss_section": {
+      "applicable": true,
+      "software_maturity_years": {
+        "value": null,
+        "calculation_basis": "",
+        "evidence_sources": []
+      },
+      "requested_version_age_months": {
+        "value": null,
+        "release_date": "",
+        "calculation_basis": "",
+        "evidence_sources": []
+      },
+      "project_stars_awarded": {
+        "current_star_count": null,
+        "trend_last_12_months": "",
+        "relative_popularity_notes": "",
+        "notable_adopters_or_stargazers": "",
+        "cybersecurity_relevance_notes": "",
+        "management_summary": "",
+        "evidence_sources": []
+      },
+      "project_fork_count": {
+        "total_forks": null,
+        "active_forks_estimate": null,
+        "security_relevant_forks_notes": "",
+        "evidence_sources": []
+      },
+      "closed_issues_count": {
+        "closed_issues": null,
+        "open_issues": null,
+        "issue_closure_rate_notes": "",
+        "security_bug_handling_notes": "",
+        "evidence_sources": []
+      },
+      "annual_releases": {
+        "average_releases_per_year": null,
+        "time_window_years": null,
+        "cadence_characterization": "",
+        "security_patch_cadence_notes": "",
+        "evidence_sources": []
+      },
+      "top_10_human_contributors": [
+        {
+          "rank": 1,
+          "display_name": "",
+          "profile_handle": "",
+          "profile_url": "",
+          "is_individual": true,
+          "organization_or_employer": "",
+          "self_reported_country": "",
+          "commit_count_default_branch": null,
+          "security_relevant_activity_notes": "",
+          "evidence_sources": []
+        }
+      ],
+      "oss_summary_for_cybersecurity_team": "",
+      "oss_summary_for_management": ""
+    },
+    "cots_section": {
+      "applicable": false,
+      "company_maturity_years": {
+        "value": null,
+        "founded_year": null,
+        "evidence_sources": []
+      },
+      "software_maturity_years": {
+        "value": null,
+        "first_release_year": null,
+        "evidence_sources": []
+      },
+      "requested_version_age_months": {
+        "value": null,
+        "release_date": "",
+        "calculation_basis": "",
+        "evidence_sources": []
+      },
+      "relevant_cves_overview": {
+        "time_window_description": "",
+        "total_cves": null,
+        "high_severity_cves": null,
+        "critical_severity_cves": null,
+        "cve_trend_notes": "",
+        "patching_practices_notes": "",
+        "primary_sources": []
+      },
+      "cots_cve_detail_list": [
+        {
+          "cve_id": "",
+          "component_name": "",
+          "component_type": "",
+          "is_direct_component_of_software": true,
+          "cvss_score": null,
+          "severity": "",
+          "cve_summary": "",
+          "affected_versions": "",
+          "fix_status_for_requested_version": "",
+          "references": []
+        }
+      ],
+      "cots_summary_for_cybersecurity_team": "",
+      "cots_summary_for_management": ""
+    },
+    "gots_section": {
+      "applicable": false,
+      "support_level": {
+        "value": "",
+        "definition": "",
+        "evidence_sources": []
+      },
+      "software_maturity_years": {
+        "value": null,
+        "first_release_year": null,
+        "evidence_sources": []
+      },
+      "requested_version_age_months": {
+        "value": null,
+        "release_date": "",
+        "calculation_basis": "",
+        "evidence_sources": []
+      },
+      "gots_support_and_risk_notes": "",
+      "gots_summary_for_cybersecurity_team": "",
+      "gots_summary_for_management": ""
+    },
+    "overall_assessment": {
+      "key_strengths": [],
+      "key_weaknesses": [],
+      "notable_unknowns_or_information_gaps": [],
+      "recommended_next_steps_for_research": [],
+      "management_risk_summary": "",
+      "analyst_notes": ""
+    },
+    "open_questions": [
+      {
+        "section": "",
+        "field": "",
+        "question_text": "",
+        "why_it_matters_for_security": ""
+      }
+    ]
+  },
+  "research_questions": {
+    "general": [
+      "What is the primary security-relevant function of <SOFTWARE_NAME> in typical deployments?",
+      "Is <SOFTWARE_NAME> typically exposed to untrusted networks, or used as an internal component?"
+    ],
+    "oss": {
+      "software_maturity_years": [
+        "When was the first publicly documented release of <SOFTWARE_NAME>?",
+        "Have there been long hiatuses in development that affect effective maturity?"
+      ],
+      "requested_version_age_months": [
+        "What is the release date of the requested version of <SOFTWARE_NAME>?",
+        "How many months have elapsed between that release date and today?"
+      ],
+      "project_stars_awarded": [
+        "How many GitHub stars does the canonical repository of <SOFTWARE_NAME> currently have?",
+        "Has the star count grown, plateaued, or declined in the last 12–24 months?",
+        "Are there notable organizations or well-known security projects that star, fork, or depend on <SOFTWARE_NAME>?"
+      ],
+      "project_fork_count": [
+        "How many forks exist on the primary repository for <SOFTWARE_NAME>?",
+        "Are there any major forks with independent security hardening or long-term support, and how do they relate back to the main project?"
+      ],
+      "closed_issues_count": [
+        "How many issues are currently open versus closed for the main repository?",
+        "What is the average time to close security-relevant issues, based on a representative sample?",
+        "Are there recurring security themes in closed issues (e.g., input validation, authentication, cryptography)?"
+      ],
+      "annual_releases": [
+        "How many tagged releases were published per year over the last 3–5 years?",
+        "Does the project issue out-of-band releases for critical security fixes?",
+        "Is there a clear changelog or release note history describing security-related changes?"
+      ],
+      "top_10_human_contributors": [
+        "Who are the top 10 human contributors by commits on the default branch of the canonical repository?",
+        "For each contributor, what country (if any) is listed in their public profile, and what organizations do they associate with?",
+        "Do any contributors appear to specialize in security-related changes (e.g., cryptography, authentication, input validation)?",
+        "Are any of the top contributors employed by organizations with strong security track records or known security research teams?"
+      ]
+    },
+    "cots": {
+      "company_maturity_years": [
+        "What year was the vendor company for <SOFTWARE_NAME> founded?",
+        "Does the company have an established track record in security-sensitive markets (e.g., government, finance, healthcare)?"
+      ],
+      "software_maturity_years": [
+        "When was the first commercial release of <SOFTWARE_NAME>?",
+        "Has the product line evolved steadily, or have there been major rewrites or rebrandings that affect effective maturity?"
+      ],
+      "requested_version_age_months": [
+        "What is the release date of the requested COTS version of <SOFTWARE_NAME>?",
+        "How many months have elapsed since that release date?"
+      ],
+      "relevant_cves_overview": [
+        "Which CVEs explicitly reference <SOFTWARE_NAME> and the requested version?",
+        "What is the severity distribution of those CVEs (e.g., low/medium/high/critical)?",
+        "How quickly does the vendor typically release patches after CVEs are published?",
+        "Do vendor advisories clearly describe impact, affected components, and mitigation steps?"
+      ],
+      "cots_cve_detail_list": [
+        "Which third-party components bundled with <SOFTWARE_NAME> have CVEs that affect the requested version?",
+        "For each such component, is the vulnerable version still shipped with <SOFTWARE_NAME>?",
+        "Are there any unpatched or end-of-life dependencies that represent structural risk?"
+      ]
+    },
+    "gots": {
+      "support_level": [
+        "Is the requested version of <SOFTWARE_NAME> designated as Unsupported/EOL, Security Patches Only, Routinely Updated, or Active Customer Support?",
+        "What official documentation (e.g., release bulletins, support matrices) supports this classification?",
+        "Are there any planned deprecation dates or mandated upgrade timelines relevant to security?"
+      ],
+      "software_maturity_years": [
+        "When was the first GOTS release or internal deployment of <SOFTWARE_NAME>?",
+        "Has the software undergone major architectural changes that affect its effective maturity?"
+      ],
+      "requested_version_age_months": [
+        "When was the requested GOTS version of <SOFTWARE_NAME> released?",
+        "How many months have elapsed since that release date?",
+        "Has a successor version been mandated or recommended for security reasons?"
+      ]
+    }
+  }
+}
 
